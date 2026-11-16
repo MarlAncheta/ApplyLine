@@ -1,0 +1,54 @@
+# Render Blueprint for ApplyLine
+# NOTE: Secret values are intentionally NOT included. Add them in the Render dashboard
+# after creating the services from this blueprint. Review names before deploying.
+
+services:
+  - type: web
+    name: applyline-api
+    runtime: python
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
+      - key: COOKIE_SECURE
+        value: true
+      - key: COOKIE_SAMESITE
+        value: lax
+      - key: DATABASE_URL
+        sync: false # set to your Neon PostgreSQL connection string
+      - key: SECRET_KEY
+        sync: false # generate a long random value
+      - key: CORS_ORIGINS
+        sync: false # https://your-frontend.onrender.com
+      - key: STORAGE_PROVIDER
+        value: s3
+      - key: STORAGE_BUCKET
+        sync: false
+      - key: STORAGE_REGION
+        sync: false
+      - key: STORAGE_ACCESS_KEY
+        sync: false
+      - key: STORAGE_SECRET_KEY
+        sync: false
+
+  - type: static
+    name: applyline-web
+    plan: free
+    branch: main
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false # https://applyline-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

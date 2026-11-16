@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+backend/uploads/
+backend/*.db
+backend/*.db-*
+frontend/test-results/
+frontend/playwright-report/
+
+# Build output
+frontend/dist/
+backend/.pytest_cache/
+frontend/.eslintcache
+*.tsbuildinfo
+.DS_Store
