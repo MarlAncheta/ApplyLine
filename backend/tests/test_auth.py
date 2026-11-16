@@ -4,6 +4,15 @@ from __future__ import annotations
 
 import pytest
 
+from app.core.security import generate_csrf_token, hash_token
+from app.models.user import RefreshToken
+
+
+def test_generated_tokens_fit_database_columns():
+    """SQLite ignores VARCHAR length; PostgreSQL does not. Guard the real limit."""
+    assert len(generate_csrf_token()) <= RefreshToken.__table__.c.family_id.type.length
+    assert len(hash_token("sample")) <= RefreshToken.__table__.c.token_hash.type.length
+
 
 @pytest.mark.asyncio
 async def test_health(client):
