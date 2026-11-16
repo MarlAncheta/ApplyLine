@@ -102,7 +102,7 @@ export default function CalendarPage() {
     <div>
       <PageHeader
         title="Calendar"
-        description="Interviews, follow-ups, and deadlines — all on one timeline."
+        description="Interviews, follow-ups, and deadlines on one timeline."
         action={
           <>
             <div className="flex rounded-lg border border-border p-0.5">
@@ -128,7 +128,7 @@ export default function CalendarPage() {
       {!isLoading && !isError && (
         <Card className="overflow-hidden">
           <div className="border-b border-border px-4 py-3 text-center text-lg font-semibold">
-            {view === 'month' ? format(anchor, 'MMMM yyyy') : `${format(startOfWeek(anchor), 'MMM d')} – ${format(endOfWeek(anchor), 'MMM d, yyyy')}`}
+            {view === 'month' ? format(anchor, 'MMMM yyyy') : `${format(startOfWeek(anchor), 'MMM d')} to ${format(endOfWeek(anchor), 'MMM d, yyyy')}`}
           </div>
           <div className="grid grid-cols-7 border-b border-border bg-surface-2/40">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (

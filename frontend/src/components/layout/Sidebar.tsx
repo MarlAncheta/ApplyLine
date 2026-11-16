@@ -9,10 +9,10 @@ import {
   History,
   LayoutDashboard,
   BellRing,
-  Sparkles,
   X,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Logo } from '@/components/shared/logo'
 import { useUiStore } from '@/stores/ui.store'
 import { useAuthStore } from '@/stores/auth.store'
 
@@ -49,11 +49,8 @@ export function Sidebar() {
         )}
       >
         <div className="flex h-16 items-center justify-between border-b border-border px-5">
-          <NavLink to="/app" className="flex items-center gap-2.5" onClick={() => setSidebarOpen(false)}>
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-background">
-              <Sparkles className="h-5 w-5" strokeWidth={2.5} />
-            </span>
-            <span className="text-lg font-bold tracking-tight">ApplyLine</span>
+          <NavLink to="/app" onClick={() => setSidebarOpen(false)}>
+            <Logo size={32} />
           </NavLink>
           <button
             className="rounded p-1 text-muted hover:text-text lg:hidden"

@@ -9,9 +9,9 @@ import {
   Columns3,
   FileText,
   History,
-  Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/shared/logo'
 
 const FEATURES = [
   {
@@ -42,7 +42,7 @@ const FEATURES = [
   {
     icon: BarChart3,
     title: 'Progress you can see',
-    text: 'Real statistics from your own data reveal what is working — and what needs a tweak.',
+    text: 'Real statistics from your own data reveal what is working and what needs a tweak.',
   },
 ]
 
@@ -57,11 +57,8 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <Link to="/" className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-background">
-              <Sparkles className="h-5 w-5" strokeWidth={2.5} />
-            </span>
-            <span className="text-lg font-bold tracking-tight">ApplyLine</span>
+          <Link to="/">
+            <Logo size={32} />
           </Link>
           <nav className="flex items-center gap-2 sm:gap-4">
             <Link to="/login" className="hidden px-3 py-2 text-sm font-medium text-muted hover:text-text sm:block">
@@ -87,12 +84,12 @@ export default function LandingPage() {
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               Finding the right role is what keeps the search alive. ApplyLine helps you organize
-              every application, interview, and deadline in one calm place — so you can focus on
+              every application, interview, and deadline in one calm place, so you can focus on
               landing the job, not remembering where you applied.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild size="lg">
-                <Link to="/register">Start organizing — it's free <ArrowRight className="h-4 w-4" /></Link>
+                <Link to="/register">Start organizing for free <ArrowRight className="h-4 w-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/login">I already have an account</Link>
@@ -163,11 +160,9 @@ export default function LandingPage() {
       <footer className="border-t border-border py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-muted sm:flex-row sm:px-6">
           <div className="flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary text-background">
-              <Sparkles className="h-3.5 w-3.5" strokeWidth={2.5} />
-            </span>
+            <Logo size={24} showWordmark={false} />
             <span className="font-semibold text-text">ApplyLine</span>
-            <span>— Your career. Your lifeline.</span>
+            <span>Your career. Your lifeline.</span>
           </div>
           <p>© {new Date().getFullYear()} ApplyLine. Built for the search.</p>
         </div>

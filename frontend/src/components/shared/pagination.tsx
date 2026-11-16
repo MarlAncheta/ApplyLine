@@ -17,7 +17,7 @@ export function Pagination({
   return (
     <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-border pt-4 sm:flex-row">
       <p className="text-xs text-muted">
-        Showing <span className="text-text">{first}–{last}</span> of{' '}
+        Showing <span className="text-text">{first}-{last}</span> of{' '}
         <span className="text-text">{total}</span>
       </p>
       <div className="flex items-center gap-2">

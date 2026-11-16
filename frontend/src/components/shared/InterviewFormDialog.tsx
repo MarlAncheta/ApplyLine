@@ -100,7 +100,7 @@ export function InterviewFormDialog({
                 <option value="">No application</option>
                 {applications.map((a) => (
                   <option key={a.id} value={a.id}>
-                    {a.position_title}{a.company ? ` — ${a.company.name}` : ''}
+                    {a.position_title}{a.company ? ` (${a.company.name})` : ''}
                   </option>
                 ))}
               </select>

@@ -85,7 +85,7 @@ export function ReminderFormDialog({
               <select id="rapp" className="input-base" {...register('application_id')}>
                 <option value="">No application</option>
                 {applications.map((a) => (
-                  <option key={a.id} value={a.id}>{a.position_title}{a.company ? ` — ${a.company.name}` : ''}</option>
+                  <option key={a.id} value={a.id}>{a.position_title}{a.company ? ` (${a.company.name})` : ''}</option>
                 ))}
               </select>
             </FormField>

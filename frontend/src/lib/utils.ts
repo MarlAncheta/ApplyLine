@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 export function formatDate(value: string | null | undefined, withTime = false): string {
-  if (!value) return '—'
+  if (!value) return 'N/A'
   try {
     const date = new Date(value)
-    if (Number.isNaN(date.getTime())) return '—'
+    if (Number.isNaN(date.getTime())) return 'N/A'
     return new Intl.DateTimeFormat(undefined, {
       year: 'numeric',
       month: 'short',
@@ -17,7 +17,7 @@ export function formatDate(value: string | null | undefined, withTime = false): 
       ...(withTime ? { hour: 'numeric', minute: '2-digit' } : {}),
     }).format(date)
   } catch {
-    return '—'
+    return 'N/A'
   }
 }
 

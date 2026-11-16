@@ -74,7 +74,7 @@ export default function DocumentsPage() {
     <div>
       <PageHeader
         title="Documents"
-        description="Your resumes, cover letters, and career artifacts — stored privately."
+        description="Your resumes, cover letters, and career artifacts, stored privately."
         action={<Button onClick={() => setUploadOpen(true)}><Plus className="h-4 w-4" /> Upload document</Button>}
       />
 

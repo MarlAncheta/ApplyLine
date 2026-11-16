@@ -160,7 +160,7 @@ export function ApplicationFormDialog({
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <FormField label="Location" htmlFor="location"><Input id="location" placeholder="Remote / City" {...register('location')} /></FormField>
-              <FormField label="Compensation" htmlFor="salary"><Input id="salary" placeholder="$90k – $110k" {...register('salary')} /></FormField>
+              <FormField label="Compensation" htmlFor="salary"><Input id="salary" placeholder="$90k to $110k" {...register('salary')} /></FormField>
             </div>
             <FormField label="Job posting URL" htmlFor="job_posting_url" error={errors.job_posting_url?.message}>
               <Input id="job_posting_url" type="url" placeholder="https://…" {...register('job_posting_url')} />

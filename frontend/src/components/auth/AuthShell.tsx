@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Sparkles } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
+import { Logo } from '@/components/shared/logo'
 
 export function AuthShell({
   title,
@@ -19,11 +20,8 @@ export function AuthShell({
         <Link to="/" className="mb-8 inline-flex items-center gap-2 text-sm text-muted hover:text-text">
           <ArrowLeft className="h-4 w-4" /> Back to home
         </Link>
-        <div className="mb-6 flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-background">
-            <Sparkles className="h-5 w-5" strokeWidth={2.5} />
-          </span>
-          <span className="text-xl font-bold">ApplyLine</span>
+        <div className="mb-6">
+          <Logo size={36} wordmarkClassName="text-xl" />
         </div>
         <div className="card p-6 sm:p-8">
           <h1 className="text-2xl font-bold">{title}</h1>

@@ -18,7 +18,7 @@ function RateCard({ label, rate, value, color }: { label: string; rate: number |
     <Card className="p-5">
       <p className="text-sm text-muted">{label}</p>
       <p className="mt-2 text-3xl font-bold" style={{ color: rate === null ? undefined : color }}>
-        {rate === null ? '—' : `${rate}%`}
+        {rate === null ? 'N/A' : `${rate}%`}
       </p>
       <p className="mt-1 text-xs text-muted">{value} {value === 1 ? 'application' : 'applications'}</p>
     </Card>
@@ -33,7 +33,7 @@ export default function AnalyticsPage() {
 
   return (
     <div>
-      <PageHeader title="Analytics" description="Clear metrics from your own data — no smoke, no mirrors." />
+      <PageHeader title="Analytics" description="Clear metrics from your own data. No smoke, no mirrors." />
 
       {data?.insufficient_data && (
         <div className="mb-5 flex items-start gap-3 rounded-lg border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-warning">
@@ -52,7 +52,7 @@ export default function AnalyticsPage() {
             <RateCard label="Rejection rate" rate={data.rejection_rate.rate} value={data.rejection_rate.value} color="#E76D75" />
             <Card className="p-5">
               <p className="text-sm text-muted">Avg. response time</p>
-              <p className="mt-2 text-3xl font-bold">{data.average_response_days === null ? '—' : `${data.average_response_days}d`}</p>
+              <p className="mt-2 text-3xl font-bold">{data.average_response_days === null ? 'N/A' : `${data.average_response_days}d`}</p>
               <p className="mt-1 text-xs text-muted">Requires 3+ responses</p>
             </Card>
           </div>
@@ -130,11 +130,11 @@ export default function AnalyticsPage() {
           <Card className="mt-5">
             <CardHeader><CardTitle className="flex items-center gap-2"><Activity className="h-4 w-4 text-primary" /> How these numbers are defined</CardTitle></CardHeader>
             <CardContent className="space-y-2 text-sm text-muted">
-              <p><strong className="text-text">Interview conversion</strong> — applications currently at Interview status or with at least one interview, divided by total applications.</p>
-              <p><strong className="text-text">Offer conversion</strong> — applications at Offer status divided by total applications.</p>
-              <p><strong className="text-text">Rejection rate</strong> — applications at Rejected status divided by total applications.</p>
-              <p><strong className="text-text">Average response time</strong> — average days from the applied date to the first status change away from Applied. Shown only when at least 3 responses exist.</p>
-              <p><strong className="text-text">Applications over time</strong> — applications created in each of the last 6 months.</p>
+              <p><strong className="text-text">Interview conversion:</strong> applications currently at Interview status or with at least one interview, divided by total applications.</p>
+              <p><strong className="text-text">Offer conversion:</strong> applications at Offer status divided by total applications.</p>
+              <p><strong className="text-text">Rejection rate:</strong> applications at Rejected status divided by total applications.</p>
+              <p><strong className="text-text">Average response time:</strong> average days from the applied date to the first status change away from Applied. Shown only when at least 3 responses exist.</p>
+              <p><strong className="text-text">Applications over time:</strong> applications created in each of the last 6 months.</p>
             </CardContent>
           </Card>
         </>

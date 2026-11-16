@@ -25,7 +25,7 @@ function Detail({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div>
       <dt className="text-xs font-medium uppercase tracking-wide text-muted">{label}</dt>
-      <dd className="mt-1 text-sm text-text">{value || '—'}</dd>
+      <dd className="mt-1 text-sm text-text">{value || 'N/A'}</dd>
     </div>
   )
 }

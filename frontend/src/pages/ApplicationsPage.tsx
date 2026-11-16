@@ -94,7 +94,7 @@ export default function ApplicationsPage() {
           >
             <option value="created_at:desc">Newest first</option>
             <option value="created_at:asc">Oldest first</option>
-            <option value="position_title:asc">Title A–Z</option>
+            <option value="position_title:asc">Title A-Z</option>
             <option value="status:asc">Status</option>
             <option value="date_applied:desc">Recently applied</option>
           </select>
