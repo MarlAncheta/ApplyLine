@@ -157,7 +157,7 @@ npm run dev
 
 Open <http://localhost:5173>. The Vite dev server proxies `/api` to `http://localhost:8000`.
 
-To point the frontend at a different API (for example, a deployed backend), set `VITE_API_URL=https://your-api.onrender.com` in `frontend/.env`.
+To point the frontend at a different API (for example, a deployed backend), set `VITE_API_URL=https://your-api.onrender.com/api` in `frontend/.env`. The client normalizes a bare host to include `/api` automatically.
 
 ---
 
@@ -194,7 +194,7 @@ Only `VITE_`-prefixed public values are used. No secrets belong here.
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_API_URL` | Absolute backend URL in production; empty locally uses the `/api` proxy |
+| `VITE_API_URL` | Absolute backend **API** URL (ending in `/api`) in production; empty locally uses the `/api` proxy |
 | `VITE_API_PROXY` | Local dev proxy target |
 
 ---

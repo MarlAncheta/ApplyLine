@@ -5,7 +5,12 @@ import axios, {
   type InternalAxiosRequestConfig,
 } from 'axios'
 
-const baseURL = import.meta.env.VITE_API_URL?.trim() || '/api'
+// Service modules call paths like `/auth/register`, so the base URL must end in `/api`.
+// Accept both the bare host and host+/api to avoid configuration mistakes.
+const configuredBase = import.meta.env.VITE_API_URL?.trim() || '/api'
+const baseURL = configuredBase.endsWith('/api')
+  ? configuredBase
+  : `${configuredBase.replace(/\/$/, '')}/api`
 
 let accessToken: string | null = null
 let unauthorizedHandler: (() => void) | null = null

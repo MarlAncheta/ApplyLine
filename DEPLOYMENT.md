@@ -77,10 +77,10 @@ This guide deploys:
 1. Create a **Static Site** from the same repo.
 2. Settings:
    - **Root directory:** `frontend`
-   - **Build command:** `npm install && npm run build`
+   - **Build command:** `npm install --include=dev && npm run build`
    - **Publish directory:** `frontend/dist`
 3. Environment variables:
-   - `VITE_API_URL` = `https://YOUR-API.onrender.com` (no trailing `/api`)
+   - `VITE_API_URL` = `https://YOUR-API.onrender.com/api` (**must end in `/api`** — services call paths like `/auth/register` relative to this base), or just the bare host, which the client now normalizes automatically
 4. Add a rewrite rule so client-side routing works:
    - **Rewrite:** `/*` → `/index.html` (status 200)
    - On Render this is configured under the static site's "Redirects/Rewrites" section.

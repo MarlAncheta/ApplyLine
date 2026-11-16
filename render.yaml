@@ -43,11 +43,11 @@ services:
     plan: free
     branch: main
     rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        sync: false # https://applyline-api.onrender.com
+        sync: false # https://applyline-api.onrender.com/api (or bare host; client appends /api)
     routes:
       - type: rewrite
         source: /*
