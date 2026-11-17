@@ -30,17 +30,17 @@ ApplyLine is **not** a job board, a recruitment platform, or an automatic applic
 ## Features
 
 - **Public landing page** with hero, feature overview, how-it-works, CTAs, and footer.
-- **Authentication** — registration, login, logout, HttpOnly refresh cookies, rotating refresh tokens with reuse detection, Argon2 password hashing, profile editing, password change, forgot-password foundation, rate-limited auth endpoints.
+- **Authentication** - registration, login, logout, HttpOnly refresh cookies, rotating refresh tokens with reuse detection, Argon2 password hashing, profile editing, password change, forgot-password foundation, rate-limited auth endpoints.
 - **Dashboard** with six live metric cards plus charts for applications over time, status distribution, conversion funnel, upcoming interviews, and recent activity. Every number comes from the database.
-- **Applications** — full CRUD, search, filter by status/priority/type/arrangement/company, sort, pagination, archive, detailed record view, document associations.
-- **Kanban board** — drag-and-drop between the eight status columns plus an accessible native `<select>` on every card. Status changes persist and are logged exactly once (idempotent).
-- **Companies** — directory with CRUD, search, contact details, and application counts.
-- **Interviews** — CRUD, cancel/restore, outcomes, feedback, preparation notes, timezone-aware date/time storage, upcoming list.
-- **Calendar** — monthly and weekly views of interviews, follow-up dates, and deadlines. Event times are stored as local date + time + timezone to prevent unexpected shifting.
-- **Reminders** — CRUD, completion toggling, categories, optional application links, and duplicate prevention via a deterministic dedupe key.
-- **Documents** — upload, rename, categorize, associate with applications, authenticated download, and delete. File extension, MIME type, and size validation. Private S3-compatible object storage abstraction with a local filesystem backend for development.
-- **Activity timeline** — backend-generated records for application creation/update/status change/archive, interview scheduling/update, reminder creation, and document upload.
-- **Analytics** — applications by status, applications over time, interview/offer/rejection rates, and average response time. Percentages are hidden until at least 3 applications exist, and average response time needs 3 data points.
+- **Applications** - full CRUD, search, filter by status/priority/type/arrangement/company, sort, pagination, archive, detailed record view, document associations.
+- **Kanban board** - drag-and-drop between the eight status columns plus an accessible native `<select>` on every card. Status changes persist and are logged exactly once (idempotent).
+- **Companies** - directory with CRUD, search, contact details, and application counts.
+- **Interviews** - CRUD, cancel/restore, outcomes, feedback, preparation notes, timezone-aware date/time storage, upcoming list.
+- **Calendar** - monthly and weekly views of interviews, follow-up dates, and deadlines. Event times are stored as local date + time + timezone to prevent unexpected shifting.
+- **Reminders** - CRUD, completion toggling, categories, optional application links, and duplicate prevention via a deterministic dedupe key.
+- **Documents** - upload, rename, categorize, associate with applications, authenticated download, and delete. File extension, MIME type, and size validation. Private S3-compatible object storage abstraction with a local filesystem backend for development.
+- **Activity timeline** - backend-generated records for application creation/update/status change/archive, interview scheduling/update, reminder creation, and document upload.
+- **Analytics** - applications by status, applications over time, interview/offer/rejection rates, and average response time. Percentages are hidden until at least 3 applications exist, and average response time needs 3 data points.
 
 ---
 
